@@ -14,7 +14,7 @@ style: |
     content: 'Page ' attr(data-marpit-pagination) ' of ' attr(data-marpit-pagination-total);
     color:rgba(255, 246, 223, 1);
     height: 40pt;
-    line-height: 25pt;
+    line-height: 30pt;
     font-size: 14pt;
   }
 ---
