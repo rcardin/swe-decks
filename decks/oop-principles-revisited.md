@@ -1,21 +1,53 @@
 ---
 marp: true
 theme: gaia
+_class: lead
 paginate: true
+author: Riccardo Cardin
+lang: en
+backgroundImage: url('../assets/background.png')
+backgroundPosition: right top
+backgroundSize: 150px
+footer: "Software Engineering - Riccardo Cardin"
+style: |
+  section::after {
+    content: 'Page ' attr(data-marpit-pagination) ' of ' attr(data-marpit-pagination-total);
+    color:rgba(255, 246, 223, 1);
+    height: 40pt;
+    line-height: 25pt;
+    font-size: 14pt;
+  }
 ---
 
+<!-- _paginate: skip -->
+
 <style>
-section {
-  font-size: 22pt;
-}
+  section {
+    font-size: 22pt;
+  }
+  header,footer {
+    color:rgba(255, 246, 223, 1);
+    background-color: rgba(169, 0, 35, 0.7);
+    height: 40pt;
+    line-height: 30pt;
+  }
+  h1, h2, h3, h4 {
+    color:rgba(169, 0, 35, 1);
+  }
+  blockquote {
+    font-size: 0.9em;
+  }
+  section > *  {
+    font-size: 1em;
+  }
 </style>
 
 
 # OOP PRINCIPLES REVISITED
 
-**INGEGNERIA DEL SOFTWARE**
+## SOFTWARE ENGINEERING
 
-Università degli Studi di Padova
+#### Università degli Studi di Padova
 Dipartimento di Matematica
 Corso di Laurea in Informatica
 
@@ -44,7 +76,7 @@ riccardo.cardin@unipd.it
 - Based on extrinsic behaviour
   - Naive objects hierachies are evil
 
-> "[..] it is not even about classes. I'm sorry that I long ago coined the term "objects" for this topic because it gets many people to focus on the lesser idea. The big idea is "messaging" [..]"
+> [..] it is not even about classes. I'm sorry that I long ago coined the term "objects" for this topic because it gets many people to focus on the lesser idea. The big idea is "messaging" [..]
 > 
 > **— Alan Kay**
 
@@ -59,8 +91,7 @@ riccardo.cardin@unipd.it
 
 ```c
 struct Rectangle { 
-    double height; 
-    double width; 
+    double height, width; 
 }; 
 double area(Rectangle r) {
     // Code that computes the area of a rectangle 
@@ -81,8 +112,10 @@ void scale(Rectangle r, double factor) {
   - Testing is a hell
 
 ```c
+// From
 List<Double> scale(double height, double width, double factor)
 
+// To
 Rectangle r = new Rectangle(2.0, 4.0);
 r.height = 6.0
 printf(area(r)); // we expect 8.0, but a 24.0 is returned
@@ -122,7 +155,7 @@ class Rectangle implements Shape {
 4. Bind the structure with procedures, forming a type
    - Clients must depend only on behaviour
    - Hide data behind a private scope
-- Use interfaces to hide implementations
+5. Use interfaces to hide implementations
 
 ---
 
@@ -149,9 +182,8 @@ Let's look at an example...
 
 ## INHERITANCE
 
-**Code reuse example:**
-
 ```scala
+// Bad code reuse example:
 class AlgorithmThatReadFromCsvAndWriteOnMongo(
     filePath: String, mongoUri: String) {
     def read(): List[String] = { /* ... */ }
@@ -217,7 +249,6 @@ class AlgorithmThatReadFromKafkaAndWriteOnMongoAndLogs(
 
 ## COMPOSITION OVER INHERITANCE
 
-**Black box reuse**
 - Assembling functionalities into new features
 - No internal details
 
@@ -261,7 +292,7 @@ class Migrator(reader: Reader, writers: List[Writer]) {
 
 ---
 
-## REFERENCES
+## 📚 REFERENCES
 
 - **The Secret Life of Objects: Information Hiding**
   http://rcardin.github.io/design/programming/oop/fp/2018/06/13/the-secret-life-ofobjects.html
@@ -271,11 +302,8 @@ class Migrator(reader: Reader, writers: List[Writer]) {
 
 ---
 
-## GITHUB REPOSITORY
+## GITHUB REPOSITORIES
 
 https://github.com/rcardin/swe
-
----
-
-**Ingegneria del software**
-Riccardo Cardin
+https://github.com/rcardin/swe-decks
+https://github.com/rcardin/swe-imdb
