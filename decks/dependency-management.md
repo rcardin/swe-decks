@@ -17,6 +17,7 @@ style: |
     line-height: 30pt;
     font-size: 14pt;
   }
+math: mathjax
 ---
 
 <!-- _paginate: skip -->
