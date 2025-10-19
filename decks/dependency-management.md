@@ -6,7 +6,7 @@ paginate: true
 author: Riccardo Cardin
 lang: en
 backgroundImage: url('../assets/background.png')
-backgroundPosition: right top
+backgroundPosition: right 10px top 10px
 backgroundSize: 150px
 footer: "Software Engineering - Riccardo Cardin"
 style: |
